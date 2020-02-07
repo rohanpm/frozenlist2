@@ -25,7 +25,7 @@ jobs:
         python ./setup.py sdist bdist_wheel
     - name: Upload to PyPI
       run: |
-        twine -u __token__ upload dist/*
+        twine upload -u __token__ dist/*
       env:
         TWINE_PASSWORD: ${{ secrets.PYPI_TOKEN }}
 
