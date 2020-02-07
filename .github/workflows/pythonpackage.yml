@@ -32,5 +32,5 @@ jobs:
     - name: Static checks with tox
       run: |
         tox -e static
-      if: matrix.python-version == "3.8"
+      if: matrix['python-version'] == '3.8'
 
