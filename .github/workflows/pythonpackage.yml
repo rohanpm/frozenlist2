@@ -31,6 +31,7 @@ jobs:
       run: |
         PYENV=${{ matrix.python-version }}
         tox -e py${PYENV/./}
+      if: matrix['python-version'] != '3.8'
     - name: Additional checks with tox
       run: |
         tox -e cov,static,docs
