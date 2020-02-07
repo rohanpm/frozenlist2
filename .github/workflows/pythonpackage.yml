@@ -29,3 +29,8 @@ jobs:
       run: |
         PYENV=${{ matrix.python-version }}
         tox -e py${PYENV/./}
+    - name: Static checks with tox
+      run: |
+        tox -e static
+      if: matrix.python-version == "3.8"
+
