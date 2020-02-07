@@ -27,5 +27,5 @@ jobs:
       run: |
         scripts/push-docs
       env:
-        super_secret: ${{ secrets.GH_PAGES_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.GH_PAGES_TOKEN }}
 
