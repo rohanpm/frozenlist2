@@ -1,4 +1,4 @@
-name: Python package
+name: Python tests
 
 on:
   pull_request:
@@ -6,6 +6,8 @@ on:
       - master
   push:
     tags: v.*
+    branches:
+      - master
 
 jobs:
   build:
@@ -31,6 +33,13 @@ jobs:
         tox -e py${PYENV/./}
     - name: Additional checks with tox
       run: |
-        tox -e static,docs
+        tox -e cov,static,docs
       if: matrix['python-version'] == '3.8'
-
+    - name: Upload coverage results
+      run: |
+        set -x
+        pip install coveralls
+        if test -n ${COVERALLS_REPO_TOKEN}; then coveralls; fi
+      if: matrix['python-version'] == '3.8'
+      env:
+        COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN }}
