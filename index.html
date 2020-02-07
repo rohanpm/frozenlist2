@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>frozenlist2 &#8212; frozenlist2  documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="frozenlist2">
+<h1>frozenlist2<a class="headerlink" href="#frozenlist2" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/rohanpm/frozenlist2">Source</a></p></li>
+<li><p><a class="reference external" href="https://pypi.org/project/frozenlist2">PyPI</a></p></li>
+</ul>
+<dl class="class">
+<dt id="frozenlist2.frozenlist">
+<em class="property">class </em><code class="sig-prename descclassname">frozenlist2.</code><code class="sig-name descname">frozenlist</code><a class="headerlink" href="#frozenlist2.frozenlist" title="Permalink to this definition">¶</a></dt>
+<dd><p>An immutable list.</p>
+<p>The <cite>frozenlist</cite> class has identical behavior to the <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code></a> class,
+with the following exceptions:</p>
+<ul class="simple">
+<li><p>Any attempt to modify the list will raise <a class="reference external" href="https://docs.python.org/3/library/exceptions.html#NotImplementedError" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NotImplementedError</span></code></a>.</p></li>
+<li><p>The list is hashable, if and only if all list elements are hashable.</p></li>
+</ul>
+<p><strong>Why not tuple?</strong></p>
+<p>Although the standard <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code></a> provides an immutable sequence,
+it has the unfortunate property that a tuple is never equal to a list,
+even when the tuple/list lengths and all elements are equal.</p>
+<p>This has negative implications for the ergonomics of an API designed
+to return immutable data. Developers typically use lists as the default
+choice for an iterable; if an API instead returns a tuple in order to
+expose immutable data, callers must be vigilant to recall that tuples
+rather than lists are in use, and forgetting this can lead to subtle
+bugs.</p>
+<p><cite>frozenlist</cite> avoids this problem, so that developers can work with
+immutable sequences without having to fight their natural inclination
+to think in terms of lists.</p>
+</dd></dl>
+
+</div>
+
+
+          </div>
+          
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, Rohan McGovern.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.3.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/index.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+    <a href="https://github.com/rohanpm/frozenlist2" class="github">
+        <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"  class="github"/>
+    </a>
+    
+
+    
+  </body>
+</html>
