@@ -28,4 +28,4 @@ jobs:
     - name: Test with tox
       run: |
         PYENV=${{ matrix.python-version }}
-        tox -e ${PYENV/./}
+        tox -e py${PYENV/./}
