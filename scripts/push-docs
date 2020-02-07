@@ -15,6 +15,6 @@ git fetch origin
 git reset origin/gh-pages || true
 
 git add -A .
-git commit -m "Build documentation for ${version} at ${rev}"
-
-git push -q origin HEAD:refs/heads/gh-pages
+if git commit -m "Build documentation for ${version} at ${rev}"; then
+  git push -q origin HEAD:refs/heads/gh-pages
+fi
