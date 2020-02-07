@@ -3,7 +3,7 @@ frozenlist2
 
 An immutable list.
 
-[![Build Status](https://travis-ci.org/rohanpm/frozenlist2.svg?branch=master)](https://travis-ci.org/rohanpm/frozenlist2)
+![Build status](https://github.com/rohanpm/frozenlist2/workflows/Python%20tests/badge.svg?branch=master&event=push)
 [![Coverage Status](https://coveralls.io/repos/github/rohanpm/frozenlist2/badge.svg?branch=master)](https://coveralls.io/github/rohanpm/frozenlist2?branch=master)
 
 - [Source](https://github.com/rohanpm/frozenlist2)
